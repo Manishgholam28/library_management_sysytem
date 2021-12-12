@@ -1,0 +1,166 @@
+project name--library management system
+
+1)the whole project is done by using python programming lanuguage
+
+2)i used 3.7.4 python version for project
+
+3)For Database programming i need Server and Database. For this i installed Xampp which is connected with Apache Server and MariaDB (Mysql) database.
+
+4)then 'library' database is created in localhost phpmyadmin through chrome browser in mysql.
+
+5)in this 'library' database, i created the following 4 table-1)login 
+
+                                                              2)Books 
+ 
+                                                              3)user 
+
+                                                              4)issue
+
+
+6)in login table i created following 2 column--1)username (varchar) 
+
+                                               2)password (varchar)
+
+7)if username and password is correct then and then u can edit the database
+
+8)in Books table i created following 4 column--1)bks_id(book id) (int)
+
+                                               2)name (varchar) 
+                                               
+                                               3)author (varchar)
+                                               
+                                               4)quantity (int)
+
+9)in user table i created following 5 column--1)user_id (int)
+              
+                                              2)name (varchar) 
+
+                                              3)phone_no (varchar) 
+
+                                              4)city (varchar)
+                            
+                                              5)birth_date (varchar)
+
+10)in issue table i created following 4 cloumn--1)b_id(book id) (int)
+
+                                               2)b_name(book name) (varchar)
+
+                                               3)p_id(user id) (int) 
+
+                                               4)qtyissue(quantity of book which is issue) (int)
+
+11)import mysql.connector in Getconn file
+
+12)Use connect () method to connect to the database.
+
+For Xampp 
+
+servername=”localhost”
+
+username=”root”
+
+password=””
+
+databasename=”library”
+
+mydb = my.connect(host='localhost',user='root',passwd='',database='library')
+
+13)creating cursor
+
+self.mydb=getconn()
+
+self.cur=self.mydb.cursor()
+
+*****************************************************************Books table****************************************************************
+
+14)in bookdetail file i created 'BookDetail' class. in BookDetail class i created the user defined function 'add_book'.import getconn fucntion for mysql connection
+
+15)in add_book function i used insert command function where we add books details
+
+16)in BookDetail class i created  user defined function 'display_book'.in display_book function we fetch all records from the database by using select command fucntion and print. 
+
+17)in BookDetail class i created  user defined function 'delete_book'.in delete_book function  we delete the row by using delete command function by providing book id 
+
+and name of book
+
+18)in BookDetail class i created  user defined function 'update_book'.in update_book fucntion we update 1.book id, 2.book name,3.author name,4.book quantity by 
+
+using update command function by providing 1.book id, 2.book name,3.author name,4.book quantity 
+
+19)in BookDetail class i created  user defined function 'search_book'.in search_book function we display the row details which we want by using select command function by 
+
+providing the 1.book id,2.book name,3.author name
+
+*****************************************************************user table****************************************************************
+
+20)in bookuser file i created 'BookUser' class. in BookDetail class i created the user defined function 'adduser'.import getconn fucntion for mysql connection
+
+21)in adduser function i used insert command function where we add user details
+
+22)in BookUser class i created  user defined function 'display'.in display function we fetch all records from the database by using select command fucntion and print. 
+
+23)in BookUser class i created  user defined function 'delete'.in delete function  we delete the row by using delete command function by providing user id 
+
+24)in BookUser class i created  user defined function 'update'.in update fucntion we update 1.name,2.phone,3.city,4.Date of Birth by using update command function 
+
+by providing user id
+
+25)in BookUser class i created  user defined function 'search'.in search function we display the row details which we want by using select command function by providing 
+
+the user id
+
+*****************************************************************issue table****************************************************************
+
+26)in bookissue file i created 'BookIssue' class. in BookIssue class i created the user defined function 'issue'.import getconn fucntion for mysql connection
+
+27)in issue function i used insert command function where we add book issue details
+
+28)in BookIssue class i created  user defined function 'display'.in display function we fetch all records from the database by using select command fucntion and print. 
+
+29)in BookIssue class i created  user defined function 'delete'.in delete function  we delete the row by using delete command function by providing user id 
+
+30)in BookIssue class i created  user defined function 'search'.in search function we display the row details which we want by using select command function by providing 
+
+the user id
+
+31)in BookIssue class i created  user defined function 'returnbook'.in returnbook fucntion we use list datatype.we update book quantity of issue book.book quantity
+
+automatically minus from issue book while you returning the book.in this i provided the book id, user id, quantity to user.if book id and user id match with 
+
+ book id and user id of issue table database then the book quantity automatically minus from issue book
+
+32)in BookIssue class i created  user defined function 'issuebook'.in issuebook function we use list datatype.we update book quantity of issue book.book quantity
+
+automatically plus from issue book while you issuing the book.in this i provided the book id, user id, quantity to user.if book id and user id match with 
+
+ book id and user id of issue table database then the book quantity automatically plus from issue book
+
+33)in BookIssue class i created  user defined function 'updatebook'.in updatebook function i created 'updateissue' and 'updatereturn' user defined funtion.
+
+34)in 'updateissue' function we use list datatype.we update book quantity of Books table which means main library book quantity.Book quantity
+
+automatically minus from Books table(main library book) while you issuing the book.in this i provided the book id, quantity to user.if book id match with 
+
+ book id of Books table(main library book) database then the book quantity automatically minus from Books table(main library book)
+
+35)in updatereturn function we use list datatype.we update book quantity of Books table which means main library book quantity.Book quantity
+
+automatically plus from Books table(main library book) while you returning the book.in this i provided the book id, quantity to user.if book id match with 
+
+ book id of Books table(main library book) database then the book quantity automatically plus from Books table(main library book)
+
+36)in bookmainmenu file i created 'main_library' user defined function.import Bookdetail,BookUser,BookIssue classes and call all above functions
+
+37)in librarymanagement file we import BookDetail class for mysql connection and 'main_library' user defined function
+
+38)then i created 'sigin' user defined function.in this if username and password is correct then and then u can edit the database.
+
+
+
+
+
+
+
+
+
+
